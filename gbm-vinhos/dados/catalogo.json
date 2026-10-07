@@ -1,0 +1,111 @@
+{
+  "loja": {
+    "nome": "GBM Vinhos",
+    "frase": "Vinhos selecionados, entregues com atenção. Escolha o seu e peça pelo WhatsApp.",
+    "whatsapp": "",
+    "instagram": "",
+    "rodape": ""
+  },
+  "produtos": [
+    {
+      "id": "malbec-reserva",
+      "nome": "Alamos Malbec",
+      "preco": 65,
+      "fotos": [
+        "alamos-malbec-4.jpg"
+      ],
+      "disponivel": true,
+      "destaque": true,
+      "descricao": "Vinho encorpado, frutado e equilibrado, perfeito para momentos especiais e boas harmonizações. Harmoniza com carnes vermelhas grelhadas, massas com molhos encorpados, queijos curados e pratos temperados e saborosos.",
+      "tipo": "Tinto",
+      "uva": "Malbec",
+      "safra": "2023",
+      "produtor": "Catena Zapata",
+      "volume": "750 ml",
+      "pais": "Argentina",
+      "regiao": "Mendoza"
+    },
+    {
+      "id": "sauvignon-blanc",
+      "nome": "Angélica Zapata | Cabernet Franc",
+      "preco": 144,
+      "fotos": [
+        "angelica-zapata-cabernet-franc-1.jpg"
+      ],
+      "disponivel": true,
+      "destaque": true,
+      "descricao": "Um Cabernet Franc argentino de perfil elegante e estruturado, ideal para quem aprecia tintos complexos, com presença de fruta, taninos marcantes e influência do carvalho.",
+      "tipo": "Tinto",
+      "uva": "Cabernet Franc",
+      "safra": "2020",
+      "produtor": "Catena Zapata",
+      "volume": "750 ml",
+      "pais": "Argentina",
+      "regiao": "Mendoza"
+    },
+    {
+      "id": "rose-provence",
+      "nome": "Rosé Provence",
+      "tipo": "Rosé",
+      "uva": "Grenache",
+      "produtor": "Domaine Exemplo",
+      "pais": "França",
+      "regiao": "Provence",
+      "safra": "2023",
+      "volume": "750 ml",
+      "preco": 119,
+      "descricao": "Rosé leve e elegante, com aroma de morango e flores brancas. Para servir bem gelado.",
+      "fotos": [],
+      "disponivel": true,
+      "destaque": false
+    },
+    {
+      "id": "espumante-brut",
+      "nome": "Espumante Brut",
+      "tipo": "Espumante",
+      "uva": "Chardonnay e Pinot Noir",
+      "produtor": "Cave Exemplo",
+      "pais": "Brasil",
+      "regiao": "Serra Gaúcha",
+      "safra": "",
+      "volume": "750 ml",
+      "preco": 94.9,
+      "descricao": "Espumante seco, de perlage fino e cremoso. Para brindar ou acompanhar entradas.",
+      "fotos": [],
+      "disponivel": true,
+      "destaque": true
+    },
+    {
+      "id": "porto-tawny",
+      "nome": "Porto Tawny",
+      "tipo": "Sobremesa",
+      "uva": "Blend tradicional",
+      "produtor": "Quinta Exemplo",
+      "pais": "Portugal",
+      "regiao": "Douro",
+      "safra": "",
+      "volume": "750 ml",
+      "preco": 159,
+      "descricao": "Vinho do Porto envelhecido em madeira, com notas de nozes e caramelo. Perfeito para sobremesas.",
+      "fotos": [],
+      "disponivel": false,
+      "destaque": false
+    },
+    {
+      "id": "carmenere",
+      "nome": "Carménère",
+      "tipo": "Tinto",
+      "uva": "Carménère",
+      "produtor": "Viña Exemplo",
+      "pais": "Chile",
+      "regiao": "Vale Central",
+      "safra": "2020",
+      "volume": "750 ml",
+      "preco": 69.9,
+      "descricao": "Tinto macio e frutado, com toque de pimenta. Bom para o dia a dia e para massas.",
+      "fotos": [],
+      "disponivel": true,
+      "destaque": false
+    }
+  ]
+}

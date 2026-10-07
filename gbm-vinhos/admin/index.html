@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Painel | GBM Vinhos</title>
+  <link rel="icon" href="data:,">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500&family=Hanken+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+  <header class="cabecalho">
+    <div class="cabecalho-conteudo">
+      <h1>Painel do catálogo</h1>
+      <div class="cabecalho-botoes">
+        <a class="botao botao-contorno" href="../" target="_blank">Ver o site</a>
+        <button class="botao botao-contorno" type="button" id="botao-loja">Dados da loja</button>
+        <button class="botao botao-principal" type="button" id="botao-novo">Novo vinho</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="pagina">
+    <!-- Avisos (ex.: falta cadastrar o WhatsApp) -->
+    <div id="avisos"></div>
+
+    <!-- Lista de vinhos cadastrados (criada pelo admin.js) -->
+    <div class="lista" id="lista"></div>
+  </main>
+
+  <!-- FORMULÁRIO DO VINHO -->
+  <dialog class="janela" id="janela-vinho">
+    <form id="form-vinho" novalidate>
+      <h2 id="titulo-vinho">Novo vinho</h2>
+
+      <div class="campos">
+        <label class="campo campo-largo">Nome do vinho *
+          <input name="nome" required autocomplete="off" placeholder="Malbec Reserva">
+        </label>
+
+        <label class="campo campo-largo">Descrição
+          <textarea name="descricao" rows="3" placeholder="Como é o vinho e com o que combina"></textarea>
+        </label>
+
+        <label class="campo">Preço (R$)
+          <input name="preco" inputmode="decimal" autocomplete="off" placeholder="89,90">
+          <small>Vazio aparece como “Sob consulta”.</small>
+        </label>
+
+        <label class="campo">Tipo
+          <select name="tipo">
+            <option>Tinto</option>
+            <option>Branco</option>
+            <option>Rosé</option>
+            <option>Espumante</option>
+            <option>Sobremesa</option>
+          </select>
+        </label>
+
+        <!-- FOTOS -->
+        <div class="campo campo-largo">
+          <span>Fotos</span>
+          <div class="fotos" id="fotos"></div>
+          <button class="soltar" type="button" id="soltar">
+            <strong>Arraste as fotos para cá</strong> ou clique para escolher.<br>
+            <small>Elas são reduzidas e renomeadas sozinhas (ex.: malbec-reserva-1.jpg). A primeira é a capa.</small>
+          </button>
+          <input type="file" id="arquivos" accept="image/*" multiple hidden>
+
+          <!-- Fotos que estão na pasta img/ e nenhum vinho usa -->
+          <div id="soltas"></div>
+        </div>
+
+        <!-- Detalhes opcionais (aparecem na ficha do vinho) -->
+        <details class="campo-largo">
+          <summary>Mais detalhes (opcional)</summary>
+          <div class="campos">
+            <label class="campo">Uva <input name="uva" autocomplete="off" placeholder="Malbec"></label>
+            <label class="campo">Safra <input name="safra" autocomplete="off" placeholder="2021"></label>
+            <label class="campo">Produtor <input name="produtor" autocomplete="off"></label>
+            <label class="campo">Volume <input name="volume" autocomplete="off" placeholder="750 ml"></label>
+            <label class="campo">País <input name="pais" autocomplete="off"></label>
+            <label class="campo">Região <input name="regiao" autocomplete="off"></label>
+          </div>
+        </details>
+
+        <label class="marcar"><input type="checkbox" name="disponivel"> Disponível para pedido</label>
+        <label class="marcar"><input type="checkbox" name="destaque"> Mostrar como destaque</label>
+      </div>
+
+      <div class="janela-base">
+        <span class="erro" id="erro-vinho" role="alert"></span>
+        <button class="botao botao-contorno" type="button" data-fechar>Cancelar</button>
+        <button class="botao botao-principal" type="submit">Salvar vinho</button>
+      </div>
+    </form>
+  </dialog>
+
+  <!-- FORMULÁRIO DA LOJA -->
+  <dialog class="janela" id="janela-loja">
+    <form id="form-loja" novalidate>
+      <h2>Dados da loja</h2>
+      <div class="campos">
+        <label class="campo">Nome da loja
+          <input name="nome" autocomplete="off">
+        </label>
+        <label class="campo">WhatsApp (com DDD)
+          <input name="whatsapp" inputmode="tel" autocomplete="off" placeholder="(11) 91234-5678">
+          <small>É para este número que os pedidos vão.</small>
+        </label>
+        <label class="campo">Instagram (sem @)
+          <input name="instagram" autocomplete="off" placeholder="gbm_vinhos">
+        </label>
+        <label class="campo campo-largo">Frase do topo
+          <input name="frase" autocomplete="off">
+        </label>
+        <label class="campo campo-largo">Informações do rodapé
+          <textarea name="rodape" rows="3" placeholder="Ex.: entregas na região, pagamento por Pix ou cartão, horário de atendimento."></textarea>
+        </label>
+      </div>
+      <div class="janela-base">
+        <button class="botao botao-contorno" type="button" data-fechar>Cancelar</button>
+        <button class="botao botao-principal" type="submit">Salvar dados da loja</button>
+      </div>
+    </form>
+  </dialog>
+
+  <!-- Mensagem rápida de confirmação ("Vinho salvo") -->
+  <div class="recado" id="recado" role="status"></div>
+
+  <script src="admin.js"></script>
+</body>
+</html>

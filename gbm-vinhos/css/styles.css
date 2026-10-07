@@ -1,0 +1,297 @@
+/* =====================================================================
+   GBM VINHOS - Estilos da vitrine
+
+   Ideia do visual: a página é escura, cor de vinho, como uma garrafa.
+   As fotos ficam em quadros claros, como rótulos colados nela.
+
+   Índice:
+     1. Cores, fontes e medidas (mude aqui para mudar o site inteiro)
+     2. Base
+     3. Botões
+     4. Topo
+     5. Filtros
+     6. Cartões dos vinhos
+     7. Janela de detalhes e carrossel
+     8. Rodapé
+   ===================================================================== */
+
+/* ---------- 1. Cores, fontes e medidas ---------- */
+:root {
+  /* Cores */
+  --borra: #23101a;        /* fundo da página (vinho bem escuro) */
+  --borra-clara: #331826;  /* fundo de campos e áreas de apoio */
+  --vinho: #6b1d34;        /* cor da marca */
+  --rotulo: #fbf8f3;       /* branco dos quadros de foto e da janela */
+  --tinta: #24161b;        /* texto sobre o branco */
+  --creme: #f3e9e1;        /* texto sobre o escuro */
+  --suave: #c4acb3;        /* texto secundário sobre o escuro */
+  --ouro: #d3b27a;         /* detalhes e destaques */
+  --linha: #4a2a38;        /* linhas finas sobre o escuro */
+  --whatsapp: #1c7a4b;     /* botão de pedido */
+
+  /* Fontes */
+  --fonte-titulo: "Fraunces", Georgia, serif;
+  --fonte-texto: "Hanken Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  /* Medidas */
+  --largura: 1120px;       /* largura máxima do conteúdo */
+  --margem: 20px;          /* respiro nas laterais */
+  --raio: 6px;             /* arredondamento dos quadros */
+}
+
+/* ---------- 2. Base ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--borra);
+  color: var(--creme);
+  font: 400 16px/1.55 var(--fonte-texto);
+  -webkit-font-smoothing: antialiased;
+}
+
+img { display: block; max-width: 100%; }
+button, input, select { font: inherit; color: inherit; }
+button { cursor: pointer; }
+[hidden] { display: none !important; }
+
+:focus-visible { outline: 2px solid var(--ouro); outline-offset: 3px; }
+
+/* Texto que só os leitores de tela leem */
+.so-leitor {
+  position: absolute; width: 1px; height: 1px;
+  overflow: hidden; clip-path: inset(50%); white-space: nowrap;
+}
+
+/* ---------- 3. Botões ---------- */
+.botao {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  min-height: 48px; padding: 10px 22px;
+  border: 1px solid transparent; border-radius: 999px;
+  font-weight: 700; font-size: 15px; line-height: 1.2; text-decoration: none;
+}
+.botao svg { width: 18px; height: 18px; flex: none; }
+
+.botao-whatsapp { background: var(--whatsapp); color: #fff; }
+.botao-whatsapp:hover { background: #17663f; }
+.botao-claro { background: var(--creme); color: var(--borra); }
+.botao-contorno { border-color: var(--ouro); color: var(--ouro); }
+.botao-pequeno { min-height: 40px; padding: 8px 14px; font-size: 14px; }
+
+/* ---------- 4. Topo ---------- */
+.topo {
+  /* Luz suave no canto, como o reflexo em uma garrafa */
+  background: radial-gradient(120% 140% at 85% 0%, var(--vinho) 0%, var(--borra) 62%);
+  border-bottom: 1px solid var(--linha);
+}
+.topo-conteudo {
+  max-width: var(--largura); margin: 0 auto;
+  padding: clamp(36px, 7vw, 84px) var(--margem) clamp(32px, 6vw, 72px);
+  display: grid; grid-template-columns: 1fr auto; gap: 32px; align-items: center;
+}
+
+.marca {
+  margin: 0;
+  font: 500 clamp(2.6rem, 9vw, 5.5rem)/0.95 var(--fonte-titulo);
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+.frase {
+  margin: 18px 0 26px; max-width: 30ch;
+  font: italic 400 clamp(1.1rem, 2.6vw, 1.45rem)/1.4 var(--fonte-titulo);
+  color: var(--ouro);
+}
+.topo-botoes { display: flex; flex-wrap: wrap; gap: 12px; }
+
+/* Vinho em destaque: quadro claro levemente inclinado, como um rótulo */
+.destaque {
+  display: grid; gap: 14px; width: 250px; padding: 14px 14px 18px;
+  background: var(--rotulo); color: var(--tinta);
+  border: 0; border-radius: var(--raio); text-align: left;
+  transform: rotate(2deg);
+  box-shadow: 0 24px 48px -18px #000;
+  transition: transform 0.25s;
+}
+.destaque:hover { transform: rotate(0deg); }
+.destaque img { width: 100%; aspect-ratio: 1; object-fit: contain; }
+.destaque-texto { display: grid; gap: 2px; }
+.destaque-chamada { font-size: 13px; color: var(--vinho); font-weight: 700; }
+.destaque-nome { font: 500 1.25rem/1.2 var(--fonte-titulo); }
+.destaque-preco { font: 500 1.1rem var(--fonte-titulo); }
+
+/* No celular o destaque vira uma faixa deitada, para não empurrar o catálogo */
+@media (max-width: 720px) {
+  .topo-conteudo { grid-template-columns: 1fr; gap: 28px; }
+  .destaque {
+    width: 100%; grid-template-columns: 84px 1fr; align-items: center;
+    padding: 10px 14px 10px 10px; transform: none; box-shadow: none;
+  }
+}
+
+/* ---------- 5. Filtros ---------- */
+.filtros {
+  position: sticky; top: 0; z-index: 5;
+  background: var(--borra); border-bottom: 1px solid var(--linha);
+}
+.filtros-conteudo {
+  max-width: var(--largura); margin: 0 auto; padding: 12px var(--margem);
+  display: grid; grid-template-columns: minmax(180px, 300px) 1fr auto; gap: 12px; align-items: center;
+}
+
+.campo {
+  width: 100%; min-height: 44px; padding: 8px 16px;
+  background: var(--borra-clara); color: var(--creme);
+  border: 1px solid var(--linha); border-radius: 999px;
+  font-size: 16px; /* 16px evita o zoom automático do iPhone */
+}
+.campo::placeholder { color: var(--suave); }
+
+.tipos { display: flex; gap: 8px; overflow-x: auto; padding: 3px; scrollbar-width: none; }
+.tipos::-webkit-scrollbar { display: none; }
+.tipo {
+  flex: none; min-height: 40px; padding: 6px 16px;
+  background: transparent; color: var(--creme);
+  border: 1px solid var(--linha); border-radius: 999px;
+  font-weight: 500; font-size: 15px;
+}
+.tipo[aria-pressed="true"] { background: var(--ouro); border-color: var(--ouro); color: var(--borra); font-weight: 700; }
+
+@media (max-width: 720px) {
+  .filtros-conteudo { grid-template-columns: 1fr auto; }
+  .tipos { grid-column: 1 / -1; grid-row: 2; }
+}
+
+/* ---------- 6. Cartões dos vinhos ---------- */
+.catalogo { max-width: var(--largura); margin: 0 auto; padding: 24px var(--margem) 64px; }
+.contagem { margin: 0 0 18px; color: var(--suave); font-size: 14px; }
+.vazio { padding: 48px 0; text-align: center; color: var(--suave); }
+
+.grade { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 40px 24px; }
+@media (max-width: 560px) {
+  .grade { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 30px 14px; }
+}
+
+.cartao { display: flex; flex-direction: column; min-width: 0; }
+
+/* Quadro claro com a foto */
+.cartao-foto {
+  position: relative; display: grid; place-items: center;
+  width: 100%; aspect-ratio: 1; padding: 0; margin-bottom: 14px;
+  background: var(--rotulo); border: 0; border-radius: var(--raio); overflow: hidden;
+}
+.cartao-foto img { width: 100%; height: 100%; object-fit: contain; transition: transform 0.35s; }
+.cartao-foto:hover img { transform: scale(1.04); }
+
+/* Garrafa desenhada, para vinho sem foto */
+.sem-foto { height: 72%; fill: none; stroke: var(--vinho); stroke-width: 1.5; opacity: 0.45; }
+
+.esgotado .cartao-foto img, .esgotado .sem-foto { opacity: 0.4; filter: grayscale(1); }
+
+.selo, .selo-fotos {
+  position: absolute; top: 10px; left: 10px;
+  padding: 3px 10px; border-radius: 999px;
+  background: var(--vinho); color: #fff; font-size: 12px; font-weight: 700;
+}
+.selo-esgotado { background: var(--tinta); }
+.selo-fotos { top: auto; left: auto; right: 10px; bottom: 10px; background: #24161bcc; font-weight: 500; }
+
+.cartao-tipo { margin: 0; font-size: 13px; color: var(--ouro); }
+.cartao-nome { margin: 2px 0 0; font: 500 1.3rem/1.2 var(--fonte-titulo); }
+.cartao-nome button { all: unset; cursor: pointer; }
+.cartao-nome button:focus-visible { outline: 2px solid var(--ouro); outline-offset: 3px; }
+.cartao-origem { margin: 4px 0 0; font-size: 14px; color: var(--suave); }
+
+.cartao-base {
+  margin-top: auto; padding-top: 14px;
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px;
+}
+.preco { font: 500 1.35rem var(--fonte-titulo); white-space: nowrap; }
+
+/* ---------- 7. Janela de detalhes e carrossel ---------- */
+.detalhe {
+  width: min(920px, calc(100% - 24px)); max-height: calc(100dvh - 24px);
+  padding: 0; border: 0; border-radius: 10px;
+  background: var(--rotulo); color: var(--tinta);
+  overflow: auto;
+}
+.detalhe::backdrop { background: #12070ccc; }
+
+.fechar {
+  position: absolute; top: 8px; right: 8px; z-index: 2;
+  width: 44px; height: 44px; border: 0; border-radius: 50%;
+  background: var(--rotulo); color: var(--tinta); font-size: 28px; line-height: 1;
+}
+.detalhe :focus-visible { outline-color: var(--vinho); }
+
+.detalhe-conteudo { display: grid; grid-template-columns: 1fr 1fr; }
+.detalhe-texto { padding: 44px 36px 32px; display: flex; flex-direction: column; }
+.detalhe .cartao-tipo { color: var(--vinho); font-weight: 700; }
+.detalhe-nome { margin: 4px 0 12px; font: 500 clamp(1.7rem, 4vw, 2.3rem)/1.1 var(--fonte-titulo); text-wrap: balance; }
+.detalhe-descricao { margin: 0; }
+.aviso-esgotado { margin: 0 0 10px; font-weight: 700; }
+
+.ficha { display: grid; grid-template-columns: auto 1fr; gap: 6px 20px; margin: 20px 0; padding-top: 18px; border-top: 1px solid #e2d8cd; font-size: 15px; }
+.ficha dt { color: #75636a; }
+.ficha dd { margin: 0; font-weight: 500; }
+
+.detalhe-compra { margin-top: auto; display: grid; gap: 12px; }
+.preco-grande { font-size: 2.1rem; }
+
+/* Carrossel: as fotos ficam lado a lado e a área rola na horizontal.
+   "scroll-snap" faz cada foto parar encaixada no lugar. */
+.carrossel { position: relative; background: #fff; }
+.carrossel-fotos {
+  display: flex; aspect-ratio: 1; place-items: center; justify-content: flex-start;
+  overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none;
+}
+.carrossel-fotos::-webkit-scrollbar { display: none; }
+.carrossel-fotos img { flex: 0 0 100%; width: 100%; height: 100%; object-fit: contain; scroll-snap-align: center; }
+.carrossel-fotos .sem-foto { margin: auto; }
+
+.seta {
+  position: absolute; top: calc(50% - 56px);
+  width: 44px; height: 44px; border: 1px solid #e2d8cd; border-radius: 50%;
+  background: #ffffffe6; color: var(--tinta); font-size: 26px; line-height: 1; padding-bottom: 4px;
+}
+.seta-voltar { left: 10px; }
+.seta-avancar { right: 10px; }
+
+.miniaturas { display: flex; justify-content: center; gap: 8px; padding: 10px 12px 14px; }
+.miniaturas button {
+  width: 56px; height: 56px; padding: 2px;
+  background: #fff; border: 1px solid #e2d8cd; border-radius: 4px; opacity: 0.6;
+}
+.miniaturas button.ativa { border: 2px solid var(--vinho); opacity: 1; }
+.miniaturas img { width: 100%; height: 100%; object-fit: contain; }
+
+/* No celular a janela ocupa a tela toda e o botão de pedir fica preso embaixo */
+@media (max-width: 720px) {
+  .detalhe { width: 100%; max-width: 100%; height: 100dvh; max-height: 100dvh; margin: 0; border-radius: 0; }
+  .detalhe-conteudo { grid-template-columns: 1fr; }
+  .detalhe-texto { padding: 22px var(--margem) 0; }
+  .fechar { position: fixed; border: 1px solid #e2d8cd; }
+  .detalhe-compra {
+    position: sticky; bottom: 0; margin: 8px calc(var(--margem) * -1) 0;
+    padding: 12px var(--margem) calc(12px + env(safe-area-inset-bottom, 0px));
+    grid-template-columns: auto 1fr; align-items: center;
+    background: var(--rotulo); border-top: 1px solid #e2d8cd;
+  }
+  .preco-grande { font-size: 1.5rem; }
+}
+
+/* ---------- 8. Rodapé ---------- */
+.rodape { border-top: 1px solid var(--linha); }
+.rodape-conteudo {
+  max-width: var(--largura); margin: 0 auto; padding: 36px var(--margem) 44px;
+  display: grid; gap: 10px; font-size: 14px; color: var(--suave);
+}
+.rodape-conteudo p { margin: 0; max-width: 70ch; }
+.rodape-marca { font: 500 1.5rem var(--fonte-titulo); color: var(--creme); }
+.rodape-links { display: flex; gap: 18px; }
+.rodape-links:empty { display: none; }
+.rodape-links a { color: var(--ouro); }
+
+/* Quem pediu menos animação no aparelho não vê as transições */
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; scroll-behavior: auto !important; }
+}
