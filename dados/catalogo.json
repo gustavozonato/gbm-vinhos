@@ -1,9 +1,9 @@
 {
   "loja": {
     "nome": "GBM Vinhos",
-    "frase": "Vinhos selecionados, entregues com atenção. Escolha o seu e peça pelo WhatsApp.",
-    "whatsapp": "",
-    "instagram": "",
+    "frase": "Vinhos selecionados, entregues rápida para todo o Brasil. Escolha o seu e peça pelo WhatsApp.",
+    "whatsapp": "11 94024-2570",
+    "instagram": "gbm_vinhos",
     "rodape": ""
   },
   "produtos": [
@@ -12,7 +12,7 @@
       "nome": "Alamos Malbec",
       "preco": 65,
       "fotos": [
-        "alamos-malbec-4.jpg"
+        "alamos-malbec-1.jpg"
       ],
       "disponivel": true,
       "destaque": true,
@@ -27,10 +27,10 @@
     },
     {
       "id": "sauvignon-blanc",
-      "nome": "Angélica Zapata | Cabernet Franc",
+      "nome": "Angélica Zapata",
       "preco": 144,
       "fotos": [
-        "angelica-zapata-cabernet-franc-1.jpg"
+        "angelica-zapata-1.jpg"
       ],
       "disponivel": true,
       "destaque": true,
@@ -45,67 +45,75 @@
     },
     {
       "id": "rose-provence",
-      "nome": "Rosé Provence",
-      "tipo": "Rosé",
-      "uva": "Grenache",
-      "produtor": "Domaine Exemplo",
-      "pais": "França",
-      "regiao": "Provence",
-      "safra": "2023",
-      "volume": "750 ml",
-      "preco": 119,
-      "descricao": "Rosé leve e elegante, com aroma de morango e flores brancas. Para servir bem gelado.",
-      "fotos": [],
+      "nome": "Angélica Zapata",
+      "preco": 144,
+      "fotos": [
+        "angelica-zapata-2.jpg"
+      ],
       "disponivel": true,
-      "destaque": false
+      "destaque": false,
+      "descricao": "Um Cabernet Sauvignon icônico de Mendoza, que traduz a elegância, a intensidade e o terroir único da Argentina",
+      "tipo": "Tinto",
+      "uva": "Cabernet Sauvignon",
+      "safra": "2020",
+      "produtor": "Catena Zapata",
+      "volume": "750 ml",
+      "pais": "Argentina",
+      "regiao": "Mendoza"
     },
     {
       "id": "espumante-brut",
-      "nome": "Espumante Brut",
-      "tipo": "Espumante",
-      "uva": "Chardonnay e Pinot Noir",
-      "produtor": "Cave Exemplo",
-      "pais": "Brasil",
-      "regiao": "Serra Gaúcha",
-      "safra": "",
-      "volume": "750 ml",
-      "preco": 94.9,
-      "descricao": "Espumante seco, de perlage fino e cremoso. Para brindar ou acompanhar entradas.",
-      "fotos": [],
+      "nome": "Luigi Bosca",
+      "preco": 83.99,
+      "fotos": [
+        "luigi-bosca-1.jpg"
+      ],
       "disponivel": true,
-      "destaque": true
+      "destaque": true,
+      "descricao": "Elaborado 100% com uvas Malbec selecionadas de vinhedos próprios em Mendoza, aos pés da Cordilheira dos Andes. Um vinho jovem, frutado e equilibrado, que expressa toda a tipicidade da cepa e o cuidado da vinícola Luigi Bosca",
+      "tipo": "Tinto",
+      "uva": "Malbec",
+      "safra": "2025",
+      "produtor": "Bodega Luigi Bosca",
+      "volume": "750 ml",
+      "pais": "Argentina",
+      "regiao": "Mendoza"
     },
     {
       "id": "porto-tawny",
-      "nome": "Porto Tawny",
-      "tipo": "Sobremesa",
-      "uva": "Blend tradicional",
-      "produtor": "Quinta Exemplo",
-      "pais": "Portugal",
-      "regiao": "Douro",
-      "safra": "",
+      "nome": "El Enemigo",
+      "preco": 110,
+      "fotos": [
+        "el-enemigo-1.jpg"
+      ],
+      "disponivel": true,
+      "destaque": false,
+      "descricao": "Vinho intenso e elegante, com aromas de frutas negras maduras, especiarias, chocolate amargo e delicadas notas de tabaco e tostado. Encorpado, com taninos sedosos, acidez vibrante e final longo e persistente.",
+      "tipo": "Tinto",
+      "uva": "Malbec",
+      "safra": "2022",
+      "produtor": "Bodega Aleanna",
       "volume": "750 ml",
-      "preco": 159,
-      "descricao": "Vinho do Porto envelhecido em madeira, com notas de nozes e caramelo. Perfeito para sobremesas.",
-      "fotos": [],
-      "disponivel": false,
-      "destaque": false
+      "pais": "Argentina",
+      "regiao": "Mendoza"
     },
     {
       "id": "carmenere",
-      "nome": "Carménère",
-      "tipo": "Tinto",
-      "uva": "Carménère",
-      "produtor": "Viña Exemplo",
-      "pais": "Chile",
-      "regiao": "Vale Central",
-      "safra": "2020",
-      "volume": "750 ml",
-      "preco": 69.9,
-      "descricao": "Tinto macio e frutado, com toque de pimenta. Bom para o dia a dia e para massas.",
-      "fotos": [],
+      "nome": "Pequenãs Producciones",
+      "preco": 130,
+      "fotos": [
+        "pequenas-producciones-1.jpg"
+      ],
       "disponivel": true,
-      "destaque": false
+      "destaque": false,
+      "descricao": "Vinho de Mendoza que combina tradição e elegância. Apresenta aromas de ameixas, cerejas negras, baunilha e especiarias. Encorpado e macio, com estrutura equilibrada e final persistente, expressa a intensidade e o frescor do terroir argentino.",
+      "tipo": "Tinto",
+      "uva": "Malbec",
+      "safra": "2022",
+      "produtor": "Escorihuela Gascón",
+      "volume": "750 ml",
+      "pais": "Mendoza",
+      "regiao": "Argentina"
     }
   ]
 }
