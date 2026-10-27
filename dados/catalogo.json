@@ -8,6 +8,42 @@
   },
   "produtos": [
     {
+      "id": "v1793133857477",
+      "nome": "Falco Nero - White Blend",
+      "preco": 35,
+      "fotos": [
+        "falco-nero-white-blend-1.jpg"
+      ],
+      "disponivel": true,
+      "destaque": false,
+      "descricao": "Frescor chileno engarrafado! Um vinho branco seco, leve e muito frutado, com aromas de limão e toranja. Sua acidez vibrante o torna o par ideal para frutos do mar, saladas ou simplesmente para refrescar uma tarde ensolarada. Sirva bem gelado e aproveite!",
+      "tipo": "Tinto",
+      "uva": "White Blend",
+      "safra": "",
+      "produtor": "Falco Nero",
+      "volume": "750 ml",
+      "pais": "Chile",
+      "regiao": "Villa Alegre"
+    },
+    {
+      "id": "v1793133464428",
+      "nome": "Falco Nero - Red Blend",
+      "preco": 35,
+      "fotos": [
+        "falco-nero-red-blend-1.jpg"
+      ],
+      "disponivel": true,
+      "destaque": false,
+      "descricao": "Leve, frutado e perfeito para o dia a dia.\nO Falco Nero Red Blend é a escolha ideal para quem busca um vinho chileno jovem, descomplicado e muito agradável. Produzido no prestigiado Vale do Maule, este corte traz um visual rubi brilhante e aromas encantadores de frutas frescas, como ameixa e cereja. No paladar, destaca-se por sua leveza, taninos macios e um final incrivelmente macio. Um tinto versátil e equilibrado, perfeito para abrir em qualquer ocasião.",
+      "tipo": "Tinto",
+      "uva": "Red Blend",
+      "safra": "",
+      "produtor": "Falco Nero",
+      "volume": "750 ml",
+      "pais": "Chile",
+      "regiao": "Villa Alegre, Vale do Maule"
+    },
+    {
       "id": "malbec-reserva",
       "nome": "Alamos Malbec",
       "preco": 65,
